@@ -143,6 +143,10 @@ public class shelterServlet extends HttpServlet {
 		String gender = req.getParameter("gender");
 		Animal animal = new Animal(0, name, type, breed, gender);
 
+		if (shelterDao.addAnimal(animal)) {
+			System.out.println("CREATED ANIMAL" + " as\n" + animal);
+		}
+
 		shelterDao.updateAnimal(animal);
 
 		res.sendRedirect("list");
