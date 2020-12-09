@@ -4,4 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+ 
+  <servlet>
+	  <servlet-name>ShelterServlet</servlet-name>
+	  <display-name>ShelterServlet</display-name>
+	  <description></description>
+  	<servlet-class>com.cognixia.jump.web.ShelterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ShelterServlet</servlet-name>
+  <url-pattern>/ShelterServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
