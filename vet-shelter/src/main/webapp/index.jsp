@@ -5,6 +5,16 @@
 			<div class="container" style="background-color: lightblue;">
 				<h1 class="display-3">Muttley's Crew Animal Rescue</h1>
 
+<body>
+
+		<div class="container" >
+			<div class="jumbotron jumbotron-fluid" >
+				<div class="container"style="background-color:DodgerBlue;" >
+                    <h1 class="display-3">Muttley's Crew Animal Rescue</h1>
+                    
+                   </div> 
+                   <p> Helping find forever homes</p>
+
 			</div>
 			<p>Helping find forever homes</p>
 		</div>
@@ -36,4 +46,6 @@
 			</div>
 		</nav>
 	</div>
+
 	<%@ include file="footer.jsp"%>
+
