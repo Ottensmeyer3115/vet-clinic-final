@@ -118,14 +118,33 @@ public class shelterServlet extends HttpServlet {
 
 		int id = Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("name");
-		int type = Integer.parseInt(req.getParameter("type"));
+		String type = req.getParameter("type");
 		String breed = req.getParameter("breed ");
+		String gender = req.getParameter("gender");
 
-		Animal product = new Animal(id, name, type, breed);
+		Animal animal = new Animal(id, name, type, breed, gender);
 
 		shelterDao.updateAnimal(animal);
 
 		res.sendRedirect("list");
 	}
 
+	private void goToNewAnimalForm(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = req.getRequestDispatcher("animal-form.jsp");
+		dispatcher.forward(req, res);
+	}
+
+	private void addNewAnimal(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+		String name = req.getParameter("name");
+		String type = req.getParameter("type");
+		String breed = req.getParameter("breed ");
+		String gender = req.getParameter("gender");
+		Animal animal = new Animal(0, name, type, breed, gender);
+
+		shelterDao.updateAnimal(animal);
+
+		res.sendRedirect("list");
+	}
 }

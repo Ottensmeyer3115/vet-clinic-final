@@ -6,13 +6,15 @@ public class Animal {
 	private String name;
 	private String type;
 	private String breed;
+	private String gender;
 
-	public Animal(int id, String name, String type, String breed) {
+	public Animal(int id, String name, String type, String breed, String gender) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.breed = breed;
+		this.gender = gender;
 	}
 
 	public int getId() {
@@ -46,10 +48,23 @@ public class Animal {
 	public void setBreed(String breed) {
 		this.breed = breed;
 	}
+	
+	
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
 	@Override
 	public String toString() {
-		return "Animal [id=" + id + ", name=" + name + ", type=" + type + ", breed=" + breed + "]";
+		return "Animal [id=" + id + ", name=" + name + ", type=" + type + ", breed=" + breed + ", gender=" + gender
+				+ "]";
 	}
+
+	
 
 }
