@@ -10,7 +10,7 @@ import java.util.List;
 import com.cognixia.jump.connection.ConnectionManager;
 import com.cognixia.jump.model.Animal;
 
-public class AnimalDAO {
+public class ShelterDAO {
 
 	public static final Connection conn = ConnectionManager.getConnection();
 
