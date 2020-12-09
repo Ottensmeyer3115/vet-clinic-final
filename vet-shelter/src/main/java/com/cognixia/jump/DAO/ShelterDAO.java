@@ -10,9 +10,19 @@ import java.util.List;
 import com.cognixia.jump.connection.ConnectionManager;
 import com.cognixia.jump.model.Animal;
 
-public class AnimalDAO {
+public class ShelterDAO {
 
-	public static final Connection conn = ConnectionManager.getConnection();
+	try(
+	Connection conn = ConnectionManager.getConnection())
+	{
+	PreparedStatement pstmt = null;
+		if(shelter == visit) {
+			if(customer == visit)
+		}
+}catch
+	{
+
+	}
 
 	private static final String SELECT_ALL_ANIMALS = "select * from Animal";
 	private static final String SELECT_ANIMAL_BY_ID = "select * from Animal where id = ?";
