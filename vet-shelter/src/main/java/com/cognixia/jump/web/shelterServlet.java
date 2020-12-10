@@ -40,6 +40,7 @@ public class shelterServlet extends HttpServlet {
 		// actions in the switch case below:
 
 		String action = req.getServletPath();
+		System.out.println(action);
 
 		switch (action) {
 
@@ -121,8 +122,9 @@ public class shelterServlet extends HttpServlet {
 		String type = req.getParameter("type");
 		String breed = req.getParameter("breed ");
 		String gender = req.getParameter("gender");
+		int shelter_id = Integer.parseInt(req.getParameter("shelter_id"));
 
-		Animal animal = new Animal(id, name, type, breed, gender);
+		Animal animal = new Animal(id, name, type, breed, gender, shelter_id, 1);
 
 		shelterDao.updateAnimal(animal);
 
@@ -139,15 +141,17 @@ public class shelterServlet extends HttpServlet {
 
 		String name = req.getParameter("name");
 		String type = req.getParameter("type");
-		String breed = req.getParameter("breed ");
+		String breed = req.getParameter("breed");
 		String gender = req.getParameter("gender");
-		Animal animal = new Animal(10, name, type, breed, gender);
+		System.out.println("shelter= " + req.getParameter("shelter"));
+		int shelter_id = Integer.parseInt(req.getParameter("shelter"));
+		Animal animal = new Animal(10, name, type, breed, gender, shelter_id, 1);
 
 		if (shelterDao.addAnimal(animal)) {
 			System.out.println("CREATED ANIMAL" + " as\n" + animal);
 		}
 
-		shelterDao.updateAnimal(animal);
+		
 
 		res.sendRedirect("list");
 	}

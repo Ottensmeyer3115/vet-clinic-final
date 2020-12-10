@@ -7,14 +7,34 @@ public class Animal {
 	private String type;
 	private String breed;
 	private String gender;
+	private int shelter_id;
+	private int customer_id;
 
-	public Animal(int id, String name, String type, String breed, String gender) {
+	public Animal(int id, String name, String type, String breed, String gender, int shelter_id, int customer_id) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.breed = breed;
 		this.gender = gender;
+		this.shelter_id = shelter_id;
+		this.customer_id = customer_id;
+	}
+
+	public int getShelter_id() {
+		return shelter_id;
+	}
+
+	public void setShelter_id(int shelter_id) {
+		this.shelter_id = shelter_id;
+	}
+
+	public int getCustomer_id() {
+		return customer_id;
+	}
+
+	public void setCustomer_id(int customer_id) {
+		this.customer_id = customer_id;
 	}
 
 	public int getId() {
