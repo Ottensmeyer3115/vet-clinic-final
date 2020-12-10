@@ -1,3 +1,4 @@
+
 <%@ include file="header.jsp"%>
 
 <body style="background-color: lightblue;">
@@ -11,11 +12,13 @@
 			<p>Please scroll through our menu below.  Our commitment is to Helping find forever homes</p>
 		</div>
 		
+
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#">Muttley Crew Services</a>
 				</div>
+
 				
 				<ul class="nav navbar-nav">
 					<label for="adopt">Adoption</label>
@@ -28,18 +31,24 @@
 					</select>
 					<li><a href="#">Re-homing</a></li>
 					
+
 					<form class="navbar-form navbar-left">
 						<div class="input-group">
 							<input type="text" class="form-control" placeholder="Search">
 							<div class="input-group-btn">
+
 								<button class="btn btn-default" type="submit">Submit</button>
+
 							</div>
 						</div>
 					</form>
 				</ul>
+
 				
+
 			</div>
 		</nav>
 	</div>
+
 
 	<%@ include file="footer.jsp"%>

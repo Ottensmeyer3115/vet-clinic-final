@@ -4,13 +4,15 @@ public class Visit {
 
 	private int id;
 	private String date;
-	private String serviceRendered;
+	private String service_Rendered;
+	private int shelter_id;
 
-	public Visit(int id, String date, String serviceRendered) {
+	public Visit(int id, String date, String service_Rendered, int shelter_id) {
 		super();
 		this.id = id;
 		this.date = date;
-		this.serviceRendered = serviceRendered;
+		this.service_Rendered = service_Rendered;
+		this.shelter_id = shelter_id;
 	}
 
 	public int getId() {
@@ -29,17 +31,26 @@ public class Visit {
 		this.date = date;
 	}
 
-	public String getServiceRendered() {
-		return serviceRendered;
+	public String getService_Rendered() {
+		return service_Rendered;
 	}
 
-	public void setServiceRendered(String serviceRendered) {
-		this.serviceRendered = serviceRendered;
+	public void setService_Rendered(String service_Rendered) {
+		this.service_Rendered = service_Rendered;
+	}
+
+	public int getShelter_id() {
+		return shelter_id;
+	}
+
+	public void setShelter_id(int shelter_id) {
+		this.shelter_id = shelter_id;
 	}
 
 	@Override
 	public String toString() {
-		return "Visit [id=" + id + ", date=" + date + ", serviceRendered=" + serviceRendered + "]";
+		return "Visit [id=" + id + ", date=" + date + ", service_Rendered=" + service_Rendered + ", shelter_id="
+				+ shelter_id + "]";
 	}
 
 }
