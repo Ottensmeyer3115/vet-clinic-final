@@ -110,7 +110,7 @@ public class shelterServlet extends HttpServlet {
 
 		req.setAttribute("animal", animal);
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("animal-form.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("clinic-form.jsp");
 
 	}
 
@@ -141,7 +141,7 @@ public class shelterServlet extends HttpServlet {
 		String type = req.getParameter("type");
 		String breed = req.getParameter("breed ");
 		String gender = req.getParameter("gender");
-		Animal animal = new Animal(0, name, type, breed, gender);
+		Animal animal = new Animal(10, name, type, breed, gender);
 
 		if (shelterDao.addAnimal(animal)) {
 			System.out.println("CREATED ANIMAL" + " as\n" + animal);
