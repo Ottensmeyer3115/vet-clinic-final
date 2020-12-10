@@ -1,4 +1,3 @@
-
 <%@ include file="header.jsp"%>
 
 <body style="background-color: lightblue;">
@@ -44,7 +43,6 @@
 					</form>
 				</ul>
 
-				
 
 			</div>
 		</nav>

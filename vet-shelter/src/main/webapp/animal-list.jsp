@@ -9,17 +9,17 @@
 		
 		<thead>
 			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Breed</th>
-				<th>Gender</th>
-				<th>ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Type</th>
+				<th scope="col">Breed</th>
+				<th scope="col">Gender</th>
+				<th scope="col">ID</th>
 			</tr>
 		</thead>
 		
 		<tbody>
 			<c:forEach var="animal" items= "${allAnimals}">
-				
+				<tr>
 				<td>
 					<c:out value= "${ animal.animal_name}" />
 				</td>
@@ -39,13 +39,14 @@
 				
 				<td>
 					<a href= "edit?id=<c:out value='${ animal.name }' />">
-						<button class= "btn btn-danger">Give away for Adoption</button>
+						<button class= "btn btn-primary">Give away for Adoption</button>
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;
 					
 					<a href= "delete?id=<c:out value='${ animal.name }' />">
 						<button class= "btn btn-primary">Adopt</button>
 					</a>
 				</td>
+				</tr>
 				
 			</c:forEach>
 		</tbody>
