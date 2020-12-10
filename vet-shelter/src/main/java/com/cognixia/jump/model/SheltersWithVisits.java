@@ -2,12 +2,16 @@ package com.cognixia.jump.model;
 
 public class SheltersWithVisits {
 
+	
+
 	private int shelter_id;
 	private String name;
 	private String address;
 	private int visit_id;
 	private String date;
 	private String service_Rendered;
+
+	
 
 	public SheltersWithVisits(int shelter_id, String name, String address, int visit_id, String date,
 			String service_Rendered) {
