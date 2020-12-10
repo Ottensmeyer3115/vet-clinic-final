@@ -20,9 +20,9 @@ public class ShelterDAO {
 			+ " finalprojectgrp2.shelter\n" + " LEFT JOIN finalprojectgrp2.animals ON\n"
 			+ " shelter.shelter_id = animals.shelter_id";
 	private static final String SELECT_ANIMAL_BY_ID = "select * from finalprojectgrp2.animals WHERE animal_id = ? ";
-	private static final String INSERT_ANIMAL = "insert into finalprojectgrp2.animal (animal_name, animal_type, breed, gender) values(?, ?, ?, ?)";
-	private static final String DELETE_ANIMAL = "delete from finalprojectgrp2.animal where animal_id = ?";
-	private static final String UPDATE_ANIMAL = "update finalprojectgrp2.animal set animal_name = ?, animal_type = ?, animal_breed = ?, animal_gender = ? where animal_id = ?";
+	private static final String INSERT_ANIMAL = "insert into finalprojectgrp2.animals (animal_name, animal_type, breed, gender, shelter_id, customer_id) values(?, ?, ?, ?, ?, ?)";
+	private static final String DELETE_ANIMAL = "delete from finalprojectgrp2.animals where animal_id = ?";
+	private static final String UPDATE_ANIMAL = "update finalprojectgrp2.animals set animal_name = ?, animal_type = ?, animal_breed = ?, animal_gender = ? where animal_id = ?";
 
 	/**
 	 * private static final String SELECT_ANIMAL_BY_CUSTOMER_ID = "select * from
@@ -31,7 +31,7 @@ public class ShelterDAO {
 	 * 
 	 **/
 	public List<Animal> getAllAnimals() {
-		List<Animal> allAnimals = new ArrayList<Animal>();
+		List<Animal> allAnimals = new ArrayList<>();
 		try (PreparedStatement pstmt = conn.prepareStatement(SELECT_ALL_ANIMALS); ResultSet rs = pstmt.executeQuery()) {
 			while (rs.next()) {
 
@@ -43,7 +43,7 @@ public class ShelterDAO {
 				String type = rs.getString("animal_type");
 				String breed = rs.getString("breed");
 				String gender = rs.getString("gender");
-				allAnimals.add(new Animal(id, name, type, breed, gender));
+				allAnimals.add(new Animal(id, name, type, breed, gender, shelter_id, 0));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -58,11 +58,12 @@ public class ShelterDAO {
 			ResultSet rs = pstmt.executeQuery();
 			// if Animal found, if statement run, if not null returned as Animal
 			if (rs.next()) {
+				int shelter_id = rs.getInt("shelter_id");
 				String name = rs.getString("animal_name");
 				String type = rs.getString("animal_type");
 				String breed = rs.getString("breed");
 				String gender = rs.getString("gender");
-				animal = new Animal(id, name, type, breed, gender);
+				animal = new Animal(id, name, type, breed, gender, shelter_id, 0);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -76,6 +77,8 @@ public class ShelterDAO {
 			pstmt.setString(2, animal.getType());
 			pstmt.setString(3, animal.getBreed());
 			pstmt.setString(4, animal.getGender());
+			pstmt.setInt(5, animal.getShelter_id());
+			pstmt.setInt(6, animal.getCustomer_id());
 			// at least one row added
 			if (pstmt.executeUpdate() > 0) {
 				return true;
@@ -107,6 +110,8 @@ public class ShelterDAO {
 			pstmt.setString(3, animal.getType());
 			pstmt.setString(4, animal.getBreed());
 			pstmt.setString(5, animal.getGender());
+			pstmt.setInt(6, animal.getShelter_id());
+			pstmt.setInt(7, animal.getCustomer_id());
 			// at least one row updated
 			if (pstmt.executeUpdate() > 0) {
 				return true;
