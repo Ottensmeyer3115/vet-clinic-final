@@ -10,9 +10,6 @@ import java.util.List;
 import com.cognixia.jump.connection.ConnectionManager;
 import com.cognixia.jump.model.SheltersWithVisits;
 
-import com.cognixia.jump.model.Visit;
-
-
 public class ShelterWithVisitsDAO {
 
 	public static final Connection conn = ConnectionManager.getConnection();
@@ -23,13 +20,9 @@ public class ShelterWithVisitsDAO {
 
 	public List<SheltersWithVisits> getAllVisits() {
 
-
-	public List<SheltersWithVisits> getAllVisits() {
-
 		List<SheltersWithVisits> allSheltersWithVisits = new ArrayList<>();
-	
-		try (PreparedStatement pstmt = conn.prepareStatement(SELECT_ALL_VISITS); 
-				ResultSet rs = pstmt.executeQuery()) {
+
+		try (PreparedStatement pstmt = conn.prepareStatement(SELECT_ALL_VISITS); ResultSet rs = pstmt.executeQuery()) {
 
 			while (rs.next()) {
 
@@ -40,8 +33,8 @@ public class ShelterWithVisitsDAO {
 				String date = rs.getString("visit_date");
 				String service_rendered = rs.getString("service_rendered");
 
-				allSheltersWithVisits.add(new SheltersWithVisits(
-						shelter_id, shelter_name, shelter_address, visit_id, date, service_rendered));
+				allSheltersWithVisits.add(new SheltersWithVisits(shelter_id, shelter_name, shelter_address, visit_id,
+						date, service_rendered));
 
 			}
 		} catch (SQLException e) {

@@ -14,14 +14,15 @@ public class ShelterDAO {
 
 	public static final Connection conn = ConnectionManager.getConnection();
 
-	private static final String SELECT_ALL_ANIMALS = "SELECT \n" + " shelter.shelter_name,\n"
-			+ " shelter.shelter_address,\n" + " animals.animal_name, \n" + " animals.animal_type,\n"
-			+ " animals.breed, \n" + " animals.gender\n" + " FROM \n" + " shelter\n" + " LEFT JOIN animals ON\n"
+	private static final String SELECT_ALL_ANIMALS = "SELECT \n" + "shelter.shelter_id, " + "animals.animal_id,"
+			+ " shelter.shelter_name,\n" + " shelter.shelter_address,\n" + " animals.animal_name, \n"
+			+ " animals.animal_type,\n" + " animals.breed, \n" + " animals.gender\n" + " FROM \n"
+			+ " finalprojectgrp2.shelter\n" + " LEFT JOIN finalprojectgrp2.animals ON\n"
 			+ " shelter.shelter_id = animals.shelter_id";
-	private static final String SELECT_ANIMAL_BY_ID = "select * from animals WHERE animal_id = ? ";
-	private static final String INSERT_ANIMAL = "insert into animal (animal_name, animal_type, breed, gender) values(?, ?, ?, ?)";
-	private static final String DELETE_ANIMAL = "delete from product where animal_id = ?";
-	private static final String UPDATE_ANIMAL = "update animal set animal_name = ?, animal_type = ?, animal_breed = ?, animal_gender = ? where animal_id = ?";
+	private static final String SELECT_ANIMAL_BY_ID = "select * from finalprojectgrp2.animals WHERE animal_id = ? ";
+	private static final String INSERT_ANIMAL = "insert into finalprojectgrp2.animal (animal_name, animal_type, breed, gender) values(?, ?, ?, ?)";
+	private static final String DELETE_ANIMAL = "delete from finalprojectgrp2.animal where animal_id = ?";
+	private static final String UPDATE_ANIMAL = "update finalprojectgrp2.animal set animal_name = ?, animal_type = ?, animal_breed = ?, animal_gender = ? where animal_id = ?";
 
 	/**
 	 * private static final String SELECT_ANIMAL_BY_CUSTOMER_ID = "select * from

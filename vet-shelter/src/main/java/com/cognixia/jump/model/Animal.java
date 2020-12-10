@@ -48,8 +48,6 @@ public class Animal {
 	public void setBreed(String breed) {
 		this.breed = breed;
 	}
-	
-	
 
 	public String getGender() {
 		return gender;
@@ -64,7 +62,5 @@ public class Animal {
 		return "Animal [id=" + id + ", name=" + name + ", type=" + type + ", breed=" + breed + ", gender=" + gender
 				+ "]";
 	}
-
-	
 
 }

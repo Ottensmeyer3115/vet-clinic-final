@@ -87,7 +87,7 @@ public class shelterServlet extends HttpServlet {
 
 		req.setAttribute("allAnimals", allAnimals);
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("Animal-list.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("animal-list.jsp");
 
 		dispatcher.forward(req, res);
 	}

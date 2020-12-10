@@ -21,11 +21,11 @@
 			<c:forEach var="animal" items= "${allAnimals}">
 				<tr>
 				<td>
-					<c:out value= "${ animal.animal_name}" />
+					<c:out value= "${ animal.name}" />
 				</td>
 				
 				<td>
-					<c:out value= "${ animal.animal_type }" />
+					<c:out value= "${ animal.type }" />
 				</td>
 				
 				<td>
@@ -38,11 +38,11 @@
 				
 				
 				<td>
-					<a href= "edit?id=<c:out value='${ animal.name }' />">
+					<a href= "edit?id=<c:out value='${animal.id}'/>">
 						<button class= "btn btn-primary">Give away for Adoption</button>
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;
 					
-					<a href= "delete?id=<c:out value='${ animal.name }' />">
+					<a href= "delete?id=<c:out value='${animal.id}' />">
 						<button class= "btn btn-primary">Adopt</button>
 					</a>
 				</td>
