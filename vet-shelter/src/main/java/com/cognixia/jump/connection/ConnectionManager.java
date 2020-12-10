@@ -12,7 +12,7 @@ public class ConnectionManager {
 
 	private static Connection connection = null;
 
-	private static final String URL = "jdbc:mysql://den1.mysql4.gear.host?serverTimezone=UTC";
+	private static final String URL = "jdbc:mysql://den1.mysql4.gear.host?serverTimeZone=EST5EDT";
 	private static final String USERNAME = "finalprojectgrp2";
 	private static final String PASSWORD = "Root@123";
 
