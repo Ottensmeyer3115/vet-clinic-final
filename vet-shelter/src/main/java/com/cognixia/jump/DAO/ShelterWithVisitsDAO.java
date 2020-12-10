@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cognixia.jump.connection.ConnectionManager;
-import com.cognixia.jump.model.ShelterAndVisit;
+import com.cognixia.jump.model.SheltersWithVisits;
 import com.cognixia.jump.model.Visit;
 
 public class ShelterWithVisitsDAO {
@@ -21,9 +21,9 @@ public class ShelterWithVisitsDAO {
 			+ " visit.shelter_id, \n" + " FROM \n" + " shelter\n" + " LEFT JOIN visit ON\n"
 			+ " shelter.shelter_id = visit.shelter_id";
 
-	public List<ShelterAndVisit> getAllVisits() {
+	public List<SheltersWithVisits> getAllVisits() {
 
-		List<ShelterAndVisit> allSheltersWithVisits = new ArrayList<>();
+		List<SheltersWithVisits> allSheltersWithVisits = new ArrayList<>();
 	
 		try (PreparedStatement pstmt = conn.prepareStatement(SELECT_ALL_VISITS); 
 				ResultSet rs = pstmt.executeQuery()) {
@@ -35,7 +35,7 @@ public class ShelterWithVisitsDAO {
 				int visit_id = rs.getInt("visit_id");
 				String date = rs.getString("visit_date");
 				String service_rendered = rs.getString("service_rendered");
-				allSheltersWithVisits.add(new ShelterAndVisit(
+				allSheltersWithVisits.add(new SheltersWithVisits(
 						shelter_id, shelter_name, shelter_address, visit_id, date, service_rendered));
 			}
 		} catch (SQLException e) {

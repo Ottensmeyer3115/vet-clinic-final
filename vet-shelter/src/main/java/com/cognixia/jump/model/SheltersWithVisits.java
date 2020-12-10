@@ -1,6 +1,6 @@
 package com.cognixia.jump.model;
 
-public class ShelterAndVisit {
+public class SheltersWithVisits {
 	
 	private int shelter_id;
 	private String name;
@@ -9,7 +9,7 @@ public class ShelterAndVisit {
 	private String date;
 	private String service_Rendered;
 	
-	public ShelterAndVisit(int shelter_id, String name, String address, int visit_id, String date,
+	public SheltersWithVisits(int shelter_id, String name, String address, int visit_id, String date,
 			String service_Rendered) {
 		
 		this.shelter_id = shelter_id;
