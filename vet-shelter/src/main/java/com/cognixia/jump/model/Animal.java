@@ -3,38 +3,92 @@ package com.cognixia.jump.model;
 public class Animal {
 
 	private int id;
-	private String name;
-	private String type;
+	private String animalName;
+	private String animalType;
 	private String breed;
 	private String gender;
-	private int shelter_id;
-	private int customer_id;
-
-	public Animal(int id, String name, String type, String breed, String gender, int shelter_id, int customer_id) {
-		super();
+	private int shelterId;
+	private int customerId;
+	
+	public Animal() {
+		this.id = -1;
+		this.animalName = null;
+		this.animalType = null;
+		this.breed = null;
+		this.gender = null;
+		this.shelterId = 0;
+		this.customerId = 0;
+	}
+	
+	public Animal (int id) {
 		this.id = id;
-		this.name = name;
-		this.type = type;
+		this.animalName = null;
+		this.animalType = null;
+		this.breed = null;
+		this.gender = null;
+		this.shelterId = 0;
+		this.customerId = 0;
+	}
+	
+	public Animal(int id, String animalName) {
+		this.id = id;
+		this.animalName = animalName;
+		this.animalType = null;
+		this.breed = null;
+		this.gender = null;
+		this.shelterId = 0;
+		this.customerId = 0;
+	}
+	
+	public Animal(int id, String animalName, String animalType) {
+		this.id = id;
+		this.animalName = animalName;
+		this.animalType = animalType;
+		this.breed = null;
+		this.gender = null;
+		this.shelterId = 0;
+		this.customerId = 0;
+	}
+	
+	public Animal(int id, String animalName, String animalType, String breed) {
+		this.id = id;
+		this.animalName = animalName;
+		this.animalType = animalType;
+		this.breed = breed;
+		this.gender = null;
+		this.shelterId = 0;
+		this.customerId = 0;
+	}
+	
+	public Animal(int id, String animalName, String animalType, String breed, String gender) {
+		this.id = id;
+		this.animalName = animalName;
+		this.animalType = animalType;
 		this.breed = breed;
 		this.gender = gender;
-		this.shelter_id = shelter_id;
-		this.customer_id = customer_id;
+		this.shelterId = 0;
+		this.customerId = 0;
+	}
+	
+	public Animal(int id, String animalName, String animalType, String breed, String gender, int shelterId) {
+		this.id = id;
+		this.animalName = animalName;
+		this.animalType = animalType;
+		this.breed = breed;
+		this.gender = gender;
+		this.shelterId = shelterId;
+		this.customerId = 0;
 	}
 
-	public int getShelter_id() {
-		return shelter_id;
-	}
-
-	public void setShelter_id(int shelter_id) {
-		this.shelter_id = shelter_id;
-	}
-
-	public int getCustomer_id() {
-		return customer_id;
-	}
-
-	public void setCustomer_id(int customer_id) {
-		this.customer_id = customer_id;
+	public Animal(int id, String animalName, String animalType, String breed, String gender, int shelterId, int customerId) {
+		super();
+		this.id = id;
+		this.animalName = animalName;
+		this.animalType = animalType;
+		this.breed = breed;
+		this.gender = gender;
+		this.shelterId = shelterId;
+		this.customerId = customerId;
 	}
 
 	public int getId() {
@@ -45,20 +99,21 @@ public class Animal {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+
+	public String getAnimalName() {
+		return animalName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAnimalName(String animalName) {
+		this.animalName = animalName;
 	}
 
 	public String getType() {
-		return type;
+		return animalType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setAnimalType(String animalType) {
+		this.animalType = animalType;
 	}
 
 	public String getBreed() {
@@ -76,10 +131,27 @@ public class Animal {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	
+	public int getShelterId() {
+		return shelterId;
+	}
+
+	public void setShelterId(int shelterId) {
+		this.shelterId = shelterId;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Animal [id=" + id + ", name=" + name + ", type=" + type + ", breed=" + breed + ", gender=" + gender
+		return "Animal [id=" + id + ", name=" + animalName + ", type=" + animalType + ", breed=" + breed + ", gender=" + gender
 				+ "]";
 	}
 

@@ -58,12 +58,12 @@ public class ShelterDAO {
 			ResultSet rs = pstmt.executeQuery();
 			// if Animal found, if statement run, if not null returned as Animal
 			if (rs.next()) {
-				int shelter_id = rs.getInt("shelter_id");
+				int shelterId = rs.getInt("shelter_id");
 				String name = rs.getString("animal_name");
 				String type = rs.getString("animal_type");
 				String breed = rs.getString("breed");
 				String gender = rs.getString("gender");
-				animal = new Animal(id, name, type, breed, gender, shelter_id, 0);
+				animal = new Animal(id, name, type, breed, gender, shelterId, 0);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -73,12 +73,12 @@ public class ShelterDAO {
 
 	public boolean addAnimal(Animal animal) {
 		try (PreparedStatement pstmt = conn.prepareStatement(INSERT_ANIMAL)) {
-			pstmt.setString(1, animal.getName());
+			pstmt.setString(1, animal.getAnimalName());
 			pstmt.setString(2, animal.getType());
 			pstmt.setString(3, animal.getBreed());
 			pstmt.setString(4, animal.getGender());
-			pstmt.setInt(5, animal.getShelter_id());
-			pstmt.setInt(6, animal.getCustomer_id());
+			pstmt.setInt(5, animal.getShelterId());
+			pstmt.setInt(6, animal.getCustomerId());
 			// at least one row added
 			if (pstmt.executeUpdate() > 0) {
 				return true;
@@ -105,13 +105,11 @@ public class ShelterDAO {
 	public boolean updateAnimal(Animal animal) {
 		try (PreparedStatement pstmt = conn.prepareStatement(UPDATE_ANIMAL)) {
 
-			pstmt.setInt(1, animal.getId());
-			pstmt.setString(2, animal.getName());
-			pstmt.setString(3, animal.getType());
-			pstmt.setString(4, animal.getBreed());
-			pstmt.setString(5, animal.getGender());
-			pstmt.setInt(6, animal.getShelter_id());
-			pstmt.setInt(7, animal.getCustomer_id());
+			pstmt.setString(1, animal.getAnimalName());
+			pstmt.setString(2, animal.getType());
+			pstmt.setString(3, animal.getBreed());
+			pstmt.setString(4, animal.getGender());
+			pstmt.setInt(5, animal.getShelterId());
 			// at least one row updated
 			if (pstmt.executeUpdate() > 0) {
 				return true;

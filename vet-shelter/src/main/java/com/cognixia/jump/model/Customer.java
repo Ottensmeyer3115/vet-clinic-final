@@ -5,14 +5,42 @@ public class Customer {
 	private int id;
 	private String name;
 	private String address;
-	private int visit_id;
+	private int visitId;
+	
+	public Customer() {
+		this.id = 0;
+		this.name = null;
+		this.address = null;
+		this.visitId = 0;
+	}
+	
+	public Customer(int id) {
+		this.id = id;
+		this.name = null;
+		this.address = null;
+		this.visitId = 0;
+	}
+	
+	public Customer(int id, String name) {
+		this.id = id;
+		this.name = name;
+		this.address = null;
+		this.visitId = 0;
+	}
+	
+	public Customer(int id, String name, String address) {
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.visitId = 0;
+	}
 
-	public Customer(int id, String name, String address, int visit_id) {
+	public Customer(int id, String name, String address, int visitId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
-		this.visit_id = visit_id;
+		this.visitId = visitId;
 	}
 
 	public int getId() {
@@ -39,17 +67,17 @@ public class Customer {
 		this.address = address;
 	}
 
-	public int getVisit_id() {
-		return visit_id;
+	public int getVisitId() {
+		return visitId;
 	}
 
-	public void setVisit_id(int visit_id) {
-		this.visit_id = visit_id;
+	public void setVisitId(int visitId) {
+		this.visitId = visitId;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", name=" + name + ", address=" + address + ", visit_id=" + visit_id + "]";
+		return "Customer [id=" + id + ", name=" + name + ", address=" + address + ", visit_id=" + visitId + "]";
 	}
 
 }

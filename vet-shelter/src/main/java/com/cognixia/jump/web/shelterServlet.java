@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cognixia.jump.DAO.ShelterDAO;
 import com.cognixia.jump.model.Animal;
 
-@WebServlet("/")
+@WebServlet("/home")
 public class shelterServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -2629014217895122813L;

@@ -22,7 +22,7 @@ public class CustomerDAO {
 
 	public List<Customer> getAllCustomers() {
 
-		List<Customer> allCustomers = new ArrayList<Customer>();
+		List<Customer> allCustomers = new ArrayList<>();
 
 		try (PreparedStatement pstmt = conn.prepareStatement(SELECT_ALL_CUSTOMERS);
 
@@ -78,7 +78,7 @@ public class CustomerDAO {
 
 			pstmt.setString(1, customer.getName());
 			pstmt.setString(2, customer.getAddress());
-			pstmt.setInt(3, customer.getVisit_id());
+			pstmt.setInt(3, customer.getVisitId());
 
 			// at least one row added
 			if (pstmt.executeUpdate() > 0) {
@@ -111,7 +111,7 @@ public class CustomerDAO {
 			pstmt.setInt(1, customer.getId());
 			pstmt.setString(2, customer.getName());
 			pstmt.setString(3, customer.getAddress());
-			pstmt.setInt(4, customer.getVisit_id());
+			pstmt.setInt(4, customer.getVisitId());
 			// at least one row updated
 			if (pstmt.executeUpdate() > 0) {
 				return true;
